@@ -1,31 +1,63 @@
 <!DOCTYPE HTML>
 <html>
 	<head>
-		<title>Strongly Typed by HTML5 UP</title>
+		<title>AD Type Demo</title>
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1" />
 		<!--[if lte IE 8]><script src="assets/js/ie/html5shiv.js"></script><![endif]-->
 		<link rel="stylesheet" href="assets/css/main.css" />
+		<link rel="stylesheet" href="assets/css/img-loop.css" />
+		
+		<!-- General demo styles & header -->
+		<link rel="stylesheet" type="text/css" href="assets/css/demo.css" />
+		<link rel="stylesheet" type="text/css" href="assets/fonts/pixelfabric-clothes/style.css" />
+	 <!-- Flickity gallery styles -->
+		<link rel="stylesheet" type="text/css" href="assets/css/flickity.css" />
+	<!-- Component styles -->
+		<link rel="stylesheet" type="text/css" href="assets/css/component.css" />
+		<link rel="stylesheet" href="//code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css">
 		<!--[if lte IE 8]><link rel="stylesheet" href="assets/css/ie8.css" /><![endif]-->
 		<!-- Scripts -->
 		<script src="assets/js/jquery.min.js"></script>
+		<script src="assets/js/jquery-img-loop.js"></script>
+		
+		<script src="//code.jquery.com/jquery-1.10.2.js"></script>
+		<script src="//code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
 		<script src="assets/js/jquery.dropotron.min.js"></script>
 		<script src="assets/js/skel.min.js"></script>
 		<script src="assets/js/skel-viewport.min.js"></script>
 		<script src="assets/js/util.js"></script>
 		<!--[if lte IE 8]><script src="assets/js/ie/respond.min.js"></script><![endif]-->
 		<script src="assets/js/main.js"></script>
+		<script src="assets/js/modernizr.custom.js"></script>
+		<script src="assets/js/dialog.js"></script>
 	</head>
 	<body class="homepage">
 		<div id="page-wrapper">
-
 			<!-- Header -->
 				<div id="header-wrapper">
 					<div id="header" class="container">
 
 						<!-- Logo -->
-							<h1 id="logo"><a href="index.html">Strongly Typed</a></h1>
-							<p>A responsive HTML5 site template. Manufactured by HTML5 UP.</p>
+							<h1 id="logo">
+								<!--banner輪播-->
+								<div id="abgne-block">
+									<div class="abgne-player">
+										<ul class="abgne-list">
+											<li><a target="_blank" href="#"><img src="images/a.jpg"></a></li>
+											<li><a target="_blank" href="#"><img src="images/b.jpg"></a></li>
+											<li><a target="_blank" href="#"><img src="images/c.jpg"></a></li>
+											<li><a target="_blank" href="#"><img src="images/d.jpg"></a></li>
+										</ul>
+									</div>
+									<div class="abgne-control">
+										<ul class="arrows"> 
+											<li class="prev">&lt;</li> 
+											<li class="next">&gt;</li> 
+										</ul>
+									</div>
+								</div>
+							</h1>						
 
 						<!-- Nav -->
 							<nav id="nav">
@@ -56,25 +88,79 @@
 
 					</div>
 				</div>
-
+			<!--功能Bar-->
+				<!--<div class="bar">
+					<div class="filter">
+						<span class="filter__label">Filter: </span>
+						<button class="action filter__item filter__item--selected" data-filter="*">All</button>
+						<button class="action filter__item" data-filter=".jackets">Jackets</button>
+						<button class="action filter__item" data-filter=".shirts">Shirts</button>
+						<button class="action filter__item" data-filter=".dresses">Dresses</button>
+						<button class="action filter__item" data-filter=".trousers">Trousers</button>
+						<button class="action filter__item" data-filter=".shoes">Shoes</button>
+					</div>
+				</div>-->
 			<!-- Main -->
 				<div id="main-wrapper">
 					<div id="main" class="container">
 						<div class="row">
 							<!--Content-->
-							<div class="4u 12u(mobile)">
+							<div id="content" class="12u 12u(mobile)">
 
 								<!-- Feature -->
-									<section>
-										<a href="#" class="image featured"><img src="images/pic03.jpg" alt="" /></a>
-										<header>
-											<h3>Skel? What's that?</h3>
-										</header>
-										<p><strong>Skel</strong> is a lightweight framework for building responsive
-										sites and apps. All of my stuff at <a href="http://html5up.net">HTML5 UP</a> (including this
-										one) are built on this framework.</p>
+									<section class="grid grid--loading">
+										<!-- Loader -->
+										<img class="grid__loader" src="images/grid.svg" width="60" alt="Loader image" />
+										<!-- Grid sizer for a fluid Isotope (Masonry) layout -->
+										<div class="grid__sizer"></div>
+										
+										<!-- 廣告 items -->
+										<!-- class 中的 shirts是類別；grid__item--size-a是大顆的部分 -->
+										<div class="grid__item shirts">
+											<div class="slider">
+												<div class="slider__item"><img src="images/shirt.png" alt="Dummy" /></div>
+												<div class="slider__item"><img src="images/shoe.png" alt="Dummy" /></div>
+												<div class="slider__item"><img src="images/jacket.png" alt="Dummy" /></div>
+												<div class="slider__item"><img src="images/trousers.png" alt="Dummy" /></div>
+												<div class="slider__item"><img src="images/dress.png" alt="Dummy" /></div>
+											</div>
+											<!--說明-->
+											<div class="meta">
+												<h3 class="meta__title">Dummy Product</h3>
+												<span class="meta__brand">Dummy Brand</span>
+												<span class="meta__price">$99</span>
+											</div>
+										</div>
+										
+										<div class="grid__item grid__item--size-a shirts">
+											<div class="slider">
+												<div class="slider__item"><img src="images/shirt.png" alt="Dummy" /></div>
+												<div class="slider__item"><img src="images/shoe.png" alt="Dummy" /></div>
+												<div class="slider__item"><img src="images/jacket.png" alt="Dummy" /></div>
+												<div class="slider__item"><img src="images/trousers.png" alt="Dummy" /></div>
+												<div class="slider__item"><img src="images/dress.png" alt="Dummy" /></div>
+											</div>
+											<div class="meta">
+												<h3 class="meta__title">Dummy Product</h3>
+												<span class="meta__brand">Dummy Brand</span>
+												<span class="meta__price">$99</span>
+											</div>
+											
+										</div>
+										<div class="grid__item grid__item--size-a jackets">
+											<div class="slider">
+												<div class="slider__item"><img src="images/jacket.png" alt="Dummy" /></div>
+												<div class="slider__item"><img src="images/jacket.png" alt="Dummy" /></div>
+												<div class="slider__item"><img src="images/jacket.png" alt="Dummy" /></div>
+											</div>
+											<div class="meta">
+												<h3 class="meta__title">Dummy Product</h3>
+												<span class="meta__brand">Dummy Brand</span>
+												<span class="meta__price">$99</span>
+											</div>
+											
+										</div>
 									</section>
-
 							</div>
 							<!-- Content-->
 						</div>
@@ -89,8 +175,10 @@
 						</ul>
 					</div>
 				</div>
-
 		</div>
-
+		<script src="assets/js/isotope.pkgd.min.js"></script>
+		<script src="assets/js/flickity.pkgd.min.js"></script>
+		<script src="assets/js/masonry-main.js"></script>
+		
 	</body>
 </html>
