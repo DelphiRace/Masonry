@@ -18,7 +18,6 @@ $(function(){
 		});
 		dialogEven();
 	});
-	
 });
 
 function dialogEven(){

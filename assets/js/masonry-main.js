@@ -8,6 +8,7 @@
  * Copyright 2015, Codrops
  * http://www.codrops.com
  */
+ var tmpFlkty
 (function(window) {
 
 	'use strict';
@@ -45,7 +46,8 @@
 	}
 
 	// sliders - flickity
-	var sliders = [].slice.call(document.querySelectorAll('.slider')),
+	//var sliders = [].slice.call(document.querySelectorAll('.slider')),
+	var sliders = [].slice.call($(document).find('.slider')),
 		// array where the flickity instances are going to be stored
 		flkties = [],
 		// grid element
@@ -63,6 +65,7 @@
 			initEvents();
 			classie.remove(grid, 'grid--loading');
 		});
+		
 	}
 
 	function initFlickity() {
@@ -74,10 +77,19 @@
 				contain: true,
 				resize: false
 			});
-
+			$(slider).mouseover(function(){
+				var adPage = 0;
+				var adTotal = $(this).find(".slider__item").length - 1;
+				adChanges(flkty,adPage,adTotal)
+			});
+			$(slider).mouseout(function(){
+				flkty.select(0);
+				clearTimeout(adtimer);
+			});
 			// store flickity instances
 			flkties.push(flkty);
 		});
+		
 	}
 
 	function initIsotope() {
